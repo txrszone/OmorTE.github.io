@@ -2,7 +2,7 @@
 
 🎮 Gaming Enthusiast · 💻 Technology Lover · 🛠️ Digital Creator
 
-Welcome to my GitHub repository!
+Welcome to my Portofilo GitHub repository!
 
 I'm Omor, someone who enjoys gaming, exploring technology, experimenting with web development, and turning ideas into digital projects.
 
