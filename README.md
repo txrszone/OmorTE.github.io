@@ -14,7 +14,9 @@ I'm Omor, someone who enjoys gaming, exploring technology, experimenting with we
 <a href="https://www.facebook.com/Omor.TE.16016">Facebook</a> •
 <a href="https://discord.gg/PQN4P6qSrM">Discord</a>
 
-</div>---
+</div>
+
+---
 
 👨‍💻 About Me
 
