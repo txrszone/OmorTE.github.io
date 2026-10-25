@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="Omor TE — gaming, technology, and creative projects.">
+<title>About — Omor TE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#11110f;--surface:#191916;--text:#f1efe9;--muted:#a6a49c;--line:rgba(241,239,233,.15);--accent:#c8f169;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.wrap{width:min(var(--max),calc(100% - 44px));margin-inline:auto}
+.topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.wordmark{font:800 19px/1 "Manrope",sans-serif;letter-spacing:-.07em}.wordmark span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:13px}.nav a:hover{color:var(--text)}.availability{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:var(--muted)}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
+.hero{padding:76px 0 78px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:700}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(35px,7vw,96px);align-items:center}
+h1{font:600 clamp(48px,7.4vw,92px)/.99 "Manrope",sans-serif;letter-spacing:-.085em;margin:22px 0 25px;max-width:720px}h1 em{color:var(--accent);font-style:normal}.intro{max-width:480px;color:var(--muted);font-size:16px;line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.button{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 18px;border:1px solid var(--line);font-size:12px;font-weight:700;transition:transform .2s,background .2s,color .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--accent);color:#171910;border-color:var(--accent)}.button.secondary:hover{background:var(--surface)}
+.portrait-wrap{position:relative;max-width:380px;justify-self:end;width:100%}.portrait-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#24241f}.portrait-frame:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.12);pointer-events:none}.portrait-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:saturate(.86)}
+.portrait-caption{display:flex;justify-content:space-between;gap:12px;margin-top:13px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.portrait-caption span:last-child{color:var(--accent)}
+.section{border-top:1px solid var(--line);padding:66px 0}.section-head{display:grid;grid-template-columns:180px 1fr;gap:30px;margin-bottom:34px}.section-label{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:10px;padding-top:9px}
+h2{margin:0;font:600 clamp(30px,4vw,47px)/1.12 "Manrope",sans-serif;letter-spacing:-.06em}.about-copy{max-width:720px;margin-left:210px;color:var(--muted);font-size:15px;line-height:1.9}.about-copy strong{color:var(--text);font-weight:600}
+.interests{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.interest{padding:24px 20px 8px 0}.interest+.interest{border-left:1px solid var(--line);padding-left:24px}.interest-num{color:var(--accent);font-size:11px}.interest h3{margin:13px 0 7px;font:600 19px "Manrope",sans-serif;letter-spacing:-.04em}.interest p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.project-card{display:flex;justify-content:space-between;gap:24px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}.project-card:last-child{border-bottom:1px solid var(--line)}.project-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.15em;font-size:10px}.project-card h3{margin:7px 0 5px;font:600 22px "Manrope",sans-serif;letter-spacing:-.05em}.project-card p{margin:0;max-width:650px;color:var(--muted);font-size:13px}.arrow{flex:0 0 42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);font-size:19px;transition:background .2s,color .2s}.project-card:hover .arrow{background:var(--accent);color:#171910}
+.socials{display:flex;flex-wrap:wrap;gap:10px}.socials a{border:1px solid var(--line);padding:12px 15px;font-size:12px;color:var(--muted);transition:.2s}.socials a:hover{color:var(--text);border-color:var(--accent)}
+.contact-band{display:flex;align-items:end;justify-content:space-between;gap:25px}.contact-band h2{max-width:650px;margin-top:16px}footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:15px}
+.reveal{animation:rise .7s both}.delay-2{animation-delay:.15s}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.wrap{width:min(100% - 32px,var(--max))}.topbar{min-height:66px}.nav{gap:14px;font-size:11px}.nav a:nth-child(2){display:none}.availability{display:none}.hero{padding:49px 0 55px}.hero-grid{grid-template-columns:1fr;gap:38px}h1{font-size:clamp(51px,14vw,76px)}.intro{font-size:14px}.portrait-wrap{justify-self:start;max-width:440px}.portrait-frame{aspect-ratio:5/4}.section{padding:48px 0}.section-head{grid-template-columns:1fr;gap:13px;margin-bottom:24px}.about-copy{margin-left:0;font-size:14px}.interests{grid-template-columns:1fr}.interest,.interest+.interest{border-left:0;border-bottom:1px solid var(--line);padding:21px 0}.interest:last-child{border-bottom:0}.project-card h3{font-size:19px}.contact-band{align-items:start;flex-direction:column}.footer-inner{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="wrap topbar">
+<a class="wordmark" href="#home" aria-label="Home">OMOR<span>.</span></a>
+<nav class="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#interests">Interests</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+<div class="availability"><span class="dot"></span> PERSONAL WEBSITE</div>
+</header>
+<main>
+<section class="wrap hero" id="home"><div class="hero-grid">
+<div class="reveal"><div class="eyebrow">A little about me</div><h1>Curious by nature.<br><em>Always creating.</em></h1>
+<p class="intro">Hey, I’m Omor — a gaming enthusiast and technology lover who enjoys exploring ideas, learning new things, and building projects along the way.</p>
+<div class="hero-actions"><a class="button primary" href="#about">Get to know me <span aria-hidden="true">&nbsp;↘</span></a><a class="button secondary" href="#projects">Explore my work</a></div></div>
+<div class="portrait-wrap reveal delay-2"><div class="portrait-frame"><img src="https://i.postimg.cc/B6zZscsp/1787207050581.jpg" alt="Portrait of Omor" fetchpriority="high"></div><div class="portrait-caption"><span>OMOR TE · PERSONAL SPACE</span><span>01 / ABOUT</span></div></div>
+</div></section>
+<section class="section" id="about"><div class="wrap"><div class="section-head"><div class="section-label">01 — The person</div><h2>Not just what I do.<br>What I’m curious about.</h2></div>
+<div class="about-copy"><p>I’m someone who enjoys the mix of <strong>gaming, technology, and creativity</strong>. I like figuring out how things work, trying out new tools, and turning ideas into something real. This site is my little corner of the internet — a place to share what I’m working on and what I’m learning.</p><br><p>I’m still learning, still experimenting, and always looking for the next interesting thing to explore. There’s no big story to sell here — just genuine interests, ongoing projects, and room to grow.</p></div></div></section>
+<section class="section" id="interests"><div class="wrap"><div class="section-head"><div class="section-label">02 — What I’m into</div><h2>A few things that<br>keep me interested.</h2></div>
+<div class="interests"><article class="interest"><div class="interest-num">01 / PLAY</div><h3>Gaming</h3><p>Exploring games, learning strategies, and enjoying the little details that make a game memorable.</p></article><article class="interest"><div class="interest-num">02 / EXPLORE</div><h3>Technology</h3><p>Curious about websites, apps, useful tools, and the tech that makes everyday things possible.</p></article><article class="interest"><div class="interest-num">03 / MAKE</div><h3>Creative Projects</h3><p>Turning ideas into small projects, learning by doing, and improving things one step at a time.</p></article></div></div></section>
+<section class="section" id="projects"><div class="wrap"><div class="section-head"><div class="section-label">03 — Things I’ve made</div><h2>Work in progress.<br>Ideas worth exploring.</h2></div>
+<a class="project-card" href="https://mw-legends-chatbot.lovable.app/" target="_blank" rel="noopener noreferrer"><div><div class="project-kicker">Website · Chatbot</div><h3>MW Legends Official</h3><p>A gaming-focused chatbot project built to make game information and help easier to access.</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+<div class="project-card"><div><div class="project-kicker">Personal · Portfolio</div><h3>This website</h3><p>A simple home on the web to bring together my interests, projects, and links.</p></div><span class="arrow" aria-hidden="true">↗</span></div>
+</div></section>
+<section class="section" id="contact"><div class="wrap"><div class="contact-band"><div><div class="eyebrow">04 — Find me online</div><h2>Good things start with a hello.</h2></div>
+<div class="socials">
+<!-- Replace # with your actual profile links -->
+<a href="#" aria-label="YouTube profile">YouTube ↗</a><a href="#" aria-label="Facebook profile">Facebook ↗</a><a href="#" aria-label="Discord profile">Discord ↗</a>
+</div></div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Omor TE</span><span>Made with care, one detail at a time.</span></div></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
