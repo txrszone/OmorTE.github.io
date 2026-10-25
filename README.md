@@ -49,19 +49,19 @@ A file-sharing website project designed to make sharing and accessing files easi
 
 3. 🚆 Pixel Train
 
-One of my web projects.
+A pixel-style train experience with a nostalgic vibe, bringing back the charm of simple, retro-inspired visuals.
 
 🔗 Website: https://pixel-train.lovable.app/
 
 4. 🏡 Pixel Village
 
-Another website project from my collection.
+A pixel-art village viewing experience where you can explore charming pixel-style scenery and enjoy the view.
 
 🔗 Website: https://pixel-village.lovable.app/
 
 5. 🛣️ Baper Rasta
 
-A personal web project.
+Take a rickshaw through the streets of Dhaka and cause mayhem in this chaotic, city-inspired experience.
 
 🔗 Website: https://baper-rasta.lovable.app/
 
