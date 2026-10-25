@@ -1,64 +1,581 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#11110f">
-<meta name="description" content="Omor TE — gaming, technology, and creative projects.">
-<title>About — Omor TE</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#11110f;--surface:#191916;--text:#f1efe9;--muted:#a6a49c;--line:rgba(241,239,233,.15);--accent:#c8f169;--max:1120px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
-a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.wrap{width:min(var(--max),calc(100% - 44px));margin-inline:auto}
-.topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.wordmark{font:800 19px/1 "Manrope",sans-serif;letter-spacing:-.07em}.wordmark span{color:var(--accent)}
-.nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:13px}.nav a:hover{color:var(--text)}.availability{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:var(--muted)}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
-.hero{padding:76px 0 78px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:700}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(35px,7vw,96px);align-items:center}
-h1{font:600 clamp(48px,7.4vw,92px)/.99 "Manrope",sans-serif;letter-spacing:-.085em;margin:22px 0 25px;max-width:720px}h1 em{color:var(--accent);font-style:normal}.intro{max-width:480px;color:var(--muted);font-size:16px;line-height:1.85}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.button{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 18px;border:1px solid var(--line);font-size:12px;font-weight:700;transition:transform .2s,background .2s,color .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--accent);color:#171910;border-color:var(--accent)}.button.secondary:hover{background:var(--surface)}
-.portrait-wrap{position:relative;max-width:380px;justify-self:end;width:100%}.portrait-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#24241f}.portrait-frame:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.12);pointer-events:none}.portrait-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:saturate(.86)}
-.portrait-caption{display:flex;justify-content:space-between;gap:12px;margin-top:13px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.portrait-caption span:last-child{color:var(--accent)}
-.section{border-top:1px solid var(--line);padding:66px 0}.section-head{display:grid;grid-template-columns:180px 1fr;gap:30px;margin-bottom:34px}.section-label{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:10px;padding-top:9px}
-h2{margin:0;font:600 clamp(30px,4vw,47px)/1.12 "Manrope",sans-serif;letter-spacing:-.06em}.about-copy{max-width:720px;margin-left:210px;color:var(--muted);font-size:15px;line-height:1.9}.about-copy strong{color:var(--text);font-weight:600}
-.interests{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.interest{padding:24px 20px 8px 0}.interest+.interest{border-left:1px solid var(--line);padding-left:24px}.interest-num{color:var(--accent);font-size:11px}.interest h3{margin:13px 0 7px;font:600 19px "Manrope",sans-serif;letter-spacing:-.04em}.interest p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
-.project-card{display:flex;justify-content:space-between;gap:24px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}.project-card:last-child{border-bottom:1px solid var(--line)}.project-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.15em;font-size:10px}.project-card h3{margin:7px 0 5px;font:600 22px "Manrope",sans-serif;letter-spacing:-.05em}.project-card p{margin:0;max-width:650px;color:var(--muted);font-size:13px}.arrow{flex:0 0 42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);font-size:19px;transition:background .2s,color .2s}.project-card:hover .arrow{background:var(--accent);color:#171910}
-.socials{display:flex;flex-wrap:wrap;gap:10px}.socials a{border:1px solid var(--line);padding:12px 15px;font-size:12px;color:var(--muted);transition:.2s}.socials a:hover{color:var(--text);border-color:var(--accent)}
-.contact-band{display:flex;align-items:end;justify-content:space-between;gap:25px}.contact-band h2{max-width:650px;margin-top:16px}footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:15px}
-.reveal{animation:rise .7s both}.delay-2{animation-delay:.15s}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:760px){.wrap{width:min(100% - 32px,var(--max))}.topbar{min-height:66px}.nav{gap:14px;font-size:11px}.nav a:nth-child(2){display:none}.availability{display:none}.hero{padding:49px 0 55px}.hero-grid{grid-template-columns:1fr;gap:38px}h1{font-size:clamp(51px,14vw,76px)}.intro{font-size:14px}.portrait-wrap{justify-self:start;max-width:440px}.portrait-frame{aspect-ratio:5/4}.section{padding:48px 0}.section-head{grid-template-columns:1fr;gap:13px;margin-bottom:24px}.about-copy{margin-left:0;font-size:14px}.interests{grid-template-columns:1fr}.interest,.interest+.interest{border-left:0;border-bottom:1px solid var(--line);padding:21px 0}.interest:last-child{border-bottom:0}.project-card h3{font-size:19px}.contact-band{align-items:start;flex-direction:column}.footer-inner{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
-</style>
-</head>
-<body>
-<header class="wrap topbar">
-<a class="wordmark" href="#home" aria-label="Home">OMOR<span>.</span></a>
-<nav class="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#interests">Interests</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
-<div class="availability"><span class="dot"></span> PERSONAL WEBSITE</div>
-</header>
-<main>
-<section class="wrap hero" id="home"><div class="hero-grid">
-<div class="reveal"><div class="eyebrow">A little about me</div><h1>Curious by nature.<br><em>Always creating.</em></h1>
-<p class="intro">Hey, I’m Omor — a gaming enthusiast and technology lover who enjoys exploring ideas, learning new things, and building projects along the way.</p>
-<div class="hero-actions"><a class="button primary" href="#about">Get to know me <span aria-hidden="true">&nbsp;↘</span></a><a class="button secondary" href="#projects">Explore my work</a></div></div>
-<div class="portrait-wrap reveal delay-2"><div class="portrait-frame"><img src="https://i.postimg.cc/B6zZscsp/1787207050581.jpg" alt="Portrait of Omor" fetchpriority="high"></div><div class="portrait-caption"><span>OMOR TE · PERSONAL SPACE</span><span>01 / ABOUT</span></div></div>
-</div></section>
-<section class="section" id="about"><div class="wrap"><div class="section-head"><div class="section-label">01 — The person</div><h2>Not just what I do.<br>What I’m curious about.</h2></div>
-<div class="about-copy"><p>I’m someone who enjoys the mix of <strong>gaming, technology, and creativity</strong>. I like figuring out how things work, trying out new tools, and turning ideas into something real. This site is my little corner of the internet — a place to share what I’m working on and what I’m learning.</p><br><p>I’m still learning, still experimenting, and always looking for the next interesting thing to explore. There’s no big story to sell here — just genuine interests, ongoing projects, and room to grow.</p></div></div></section>
-<section class="section" id="interests"><div class="wrap"><div class="section-head"><div class="section-label">02 — What I’m into</div><h2>A few things that<br>keep me interested.</h2></div>
-<div class="interests"><article class="interest"><div class="interest-num">01 / PLAY</div><h3>Gaming</h3><p>Exploring games, learning strategies, and enjoying the little details that make a game memorable.</p></article><article class="interest"><div class="interest-num">02 / EXPLORE</div><h3>Technology</h3><p>Curious about websites, apps, useful tools, and the tech that makes everyday things possible.</p></article><article class="interest"><div class="interest-num">03 / MAKE</div><h3>Creative Projects</h3><p>Turning ideas into small projects, learning by doing, and improving things one step at a time.</p></article></div></div></section>
-<section class="section" id="projects"><div class="wrap"><div class="section-head"><div class="section-label">03 — Things I’ve made</div><h2>Work in progress.<br>Ideas worth exploring.</h2></div>
-<a class="project-card" href="https://mw-legends-chatbot.lovable.app/" target="_blank" rel="noopener noreferrer"><div><div class="project-kicker">Website · Chatbot</div><h3>MW Legends Official</h3><p>A gaming-focused chatbot project built to make game information and help easier to access.</p></div><span class="arrow" aria-hidden="true">↗</span></a>
-<div class="project-card"><div><div class="project-kicker">Personal · Portfolio</div><h3>This website</h3><p>A simple home on the web to bring together my interests, projects, and links.</p></div><span class="arrow" aria-hidden="true">↗</span></div>
-</div></section>
-<section class="section" id="contact"><div class="wrap"><div class="contact-band"><div><div class="eyebrow">04 — Find me online</div><h2>Good things start with a hello.</h2></div>
-<div class="socials">
-<!-- Replace # with your actual profile links -->
-<a href="#" aria-label="YouTube profile">YouTube ↗</a><a href="#" aria-label="Facebook profile">Facebook ↗</a><a href="#" aria-label="Discord profile">Discord ↗</a>
-</div></div></div></section>
-</main>
-<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Omor TE</span><span>Made with care, one detail at a time.</span></div></footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11120f">
+<meta name="description" content="Omor TE — gaming enthusiast, technology lover, and creator who enjoys building new things and turning ideas into reality.">
+<title>Omor TE — Always Building</title><style>
+:root {
+  --bg: #11120f;
+  --panel: #191a16;
+  --text: #f4f3ed;
+  --muted: #a3a49a;
+  --accent: #c8f169;
+  --line: rgba(255,255,255,.12);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a, nav, .badge, .eyebrow {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+p, h1, h2, h3, .project-description, footer {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.wrap {
+  width: min(1080px, 88%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(17,18,15,.91);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hero {
+  min-height: 500px;
+  padding: 75px 0;
+  display: grid;
+  grid-template-columns: 1.5fr .7fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 78px);
+  line-height: .99;
+  letter-spacing: -4px;
+  margin: 23px 0;
+  font-weight: 850;
+}
+
+h1 span { color: var(--accent); }
+
+.hero p, .section-intro {
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 19px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 750;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+.btn.primary {
+  background: var(--accent);
+  color: #171910;
+  border-color: var(--accent);
+}
+
+/* Smaller portrait with the FULL image visible */
+.portrait-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 255px;
+  margin: auto;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: 285px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 5px;
+  background: #11120f;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.portrait-label {
+  position: absolute;
+  left: -12px;
+  bottom: 22px;
+  background: var(--accent);
+  color: #171910;
+  padding: 9px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.section-number {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(32px, 5vw, 53px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.about-text {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.about-text strong { color: var(--text); }
+
+.signature {
+  color: var(--accent);
+  font-weight: 750;
+}
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.interest {
+  padding: 25px 22px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+  transition: transform .2s, border-color .2s;
+}
+
+.interest:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.interest .icon { font-size: 25px; }
+
+.interest h3 {
+  margin: 14px 0 7px;
+  font-size: 18px;
+}
+
+.interest p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.projects {
+  display: grid;
+  gap: 12px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 25px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255,255,255,.018);
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.project:hover {
+  background: var(--panel);
+  border-color: rgba(200,241,105,.6);
+  transform: translateX(4px);
+}
+
+.project-meta {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.project h3 {
+  margin: 5px 0;
+  font-size: 21px;
+  letter-spacing: -.5px;
+}
+
+.project-description {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.contact-box {
+  background: var(--accent);
+  color: #171910;
+  padding: clamp(28px, 6vw, 60px);
+  border-radius: 8px;
+}
+
+.contact-box .eyebrow { color: #424c2c; }
+
+.contact-box h2 { margin: 15px 0; }
+
+.contact-box p {
+  max-width: 540px;
+  font-size: 14px;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.35);
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.socials a {
+  padding: 10px 15px;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: background .2s;
+}
+
+.socials a:hover { background: rgba(0,0,0,.08); }
+
+footer {
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer span { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .wrap { width: 89%; }
+
+  nav { min-height: 62px; }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 55px 0 60px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 12vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  .portrait-wrap {
+    max-width: 205px;
+    padding: 9px;
+  }
+
+  .portrait { height: 225px; }
+
+  .portrait-label {
+    left: -8px;
+    bottom: 18px;
+    font-size: 9px;
+  }
+
+  .section { padding: 60px 0; }
+
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .interests { grid-template-columns: 1fr; }
+
+  .interest { padding: 21px; }
+
+  .project { padding: 19px 16px; }
+
+  .project h3 { font-size: 18px; }
+
+  .project-description { font-size: 12px; }
+
+  .contact-box { padding: 28px 22px; }
+
+  footer { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+</style></head><body><header>
+  <nav class="wrap">
+    <a class="logo" href="#home">OMOR<span>TE.</span></a><div class="nav-links">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+  </nav>
+</header><main><section class="hero wrap" id="home">
+  <div>
+    <div class="eyebrow">A little about me · Welcome</div><h1>
+  Curious by<br>
+  nature.<br>
+  <span>Always building.</span>
+</h1>
+
+<p>Hey, I’m Omor TE — a gaming enthusiast, technology lover, and creator who enjoys turning ideas into real things.</p>
+
+<div class="actions">
+  <a class="btn primary" href="#projects">Explore my projects ↗</a>
+  <a class="btn" href="#contact">Get in touch</a>
+</div>
+
+  </div>  <div class="portrait-wrap">
+    <img
+      class="portrait"
+      src="https://i.postimg.cc/B6zZscsp/1787207050581.jpg"
+      alt="Omor TE profile photo"
+    >
+    <div class="portrait-label">LEARN. CREATE. REPEAT. ↗</div>
+  </div>
+</section><section class="section" id="about">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="section-number">01 — ABOUT ME</div>
+      <h2>Not just ideas.<br>Things I can build.</h2>
+    </div><div class="about-text">
+  <p>Hey! I’m Omor TE. I love <strong>building new things</strong>, exploring technology, and turning random ideas into real projects. Whether it’s a website, a useful tool, or something connected to gaming, I enjoy learning how things work and finding ways to make them better.</p>
+
+  <p>Gaming is one of my favourite ways to unwind, while creating projects gives me a chance to experiment, solve problems, and learn something new. I’m not here to pretend I know everything — I’m here to keep improving, try ideas that excite me, and build things people can actually use.</p>
+
+  <p>This website is my little corner of the internet: a place to share what I make, what I’m interested in, and what I’m working toward.</p>
+
+  <p class="signature">Always learning. Always building. Always curious.</p>
+</div>
+
+  </div>
+</section><section class="section" id="interests">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="section-number">02 — WHAT I LIKE</div>
+      <h2>Things that<br>keep me curious.</h2>
+    </div><div class="interests">
+  <article class="interest">
+    <div class="icon">🎮</div>
+    <h3>Gaming</h3>
+    <p>I enjoy discovering games, learning strategies, and exploring the details that make games memorable — especially Modern Warships.</p>
+  </article>
+
+  <article class="interest">
+    <div class="icon">⌘</div>
+    <h3>Technology</h3>
+    <p>Websites, apps, AI tools, and the clever technology that turns an idea into something useful all interest me.</p>
+  </article>
+
+  <article class="interest">
+    <div class="icon">✳</div>
+    <h3>Creating Things</h3>
+    <p>I learn by making things myself, testing ideas, fixing problems, and improving each project step by step.</p>
+  </article>
+</div>
+
+  </div>
+</section><section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="section-number">03 — THINGS I’VE MADE</div>
+      <h2>Ideas turned<br>into real projects.</h2>
+    </div><div class="projects">
+
+  <a class="project" href="https://mw-legends-chatbot.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">01 · Gaming · Chatbot</div>
+      <h3>MW Legends Official</h3>
+      <p class="project-description">A gaming-focused chatbot project designed to make game information and help easier to access.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://trustsend.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">02 · Web App · File Sharing</div>
+      <h3>TrustSend</h3>
+      <p class="project-description">A file-hosting and sharing project focused on making it easier to share files through links.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://pixel-train.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">03 · Web Project</div>
+      <h3>Pixel Train</h3>
+      <p class="project-description">A creative web project built while exploring new ideas and bringing them to life.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://pixel-village.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">04 · Web Project</div>
+      <h3>Pixel Village</h3>
+      <p class="project-description">An experiment in building, designing, and shaping an idea into an interactive website.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://baper-rasta.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">05 · Web Project</div>
+      <h3>Baper Rasta</h3>
+      <p class="project-description">A web project that reflects my interest in making and experimenting with digital experiences.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+</div>
+
+  </div>
+</section><section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="eyebrow">04 — FIND ME ONLINE</div>  <h2>Have an idea?<br>Let’s talk.</h2>
+
+  <p>For business enquiries, collaborations, or project-related conversations, feel free to reach out by email. I’m always happy to hear about interesting ideas.</p>
+
+  <a class="email" href="mailto:mwlegendsofficial67@gmail.com">mwlegendsofficial67@gmail.com ↗</a>
+
+  <div class="socials">
+    <a href="https://www.youtube.com/@TXRS_Zone" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+    <a href="https://www.facebook.com/Omor.TE.16016" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+    <a href="https://discord.gg/PQN4P6qSrM" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+  </div>
+</div>
+
+  </div>
+</section></main><footer class="wrap">
+  <div>© <span id="year"></span> Omor TE. Made with curiosity.</div>
+  <div>Designed to keep building <span>✳</span></div>
+</footer><script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script></body>
 </html>
