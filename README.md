@@ -77,14 +77,16 @@ My personal corner of the internet, featuring information about me, my projects,
 
 🌍 Find Me Online
 
-Want to connect or check out my content? Find me here!
+<div align="center">
 
-Platform| Link
-▶️ YouTube| "TXRS Zone" (https://www.youtube.com/@TXRS_Zone)
-📘 Facebook| "Omor TE" (https://www.facebook.com/Omor.TE.16016)
-💬 Discord| "Join My Discord Server" (https://discord.gg/PQN4P6qSrM)
-🌐 Website| "Omor TE" (https://txrszone.github.io/)
-📧 Business Email| "Contact Me" (mailto:mwlegendsofficial67@gmail.com)
+<a href="https://www.youtube.com/@TXRS_Zone"><strong>YouTube</strong></a> •
+<a href="https://www.facebook.com/Omor.TE.16016"><strong>Facebook</strong></a> •
+<a href="https://discord.gg/PQN4P6qSrM"><strong>Discord</strong></a>
+<br>
+<a href="https://txrszone.github.io/"><strong>Website</strong></a> •
+<a href="mailto:mwlegendsofficial67@gmail.com"><strong>Email</strong></a>
+
+</div>
 
 ---
 
