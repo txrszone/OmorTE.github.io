@@ -1,581 +1,896 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11120f">
-<meta name="description" content="Omor TE — gaming enthusiast, technology lover, and creator who enjoys building new things and turning ideas into reality.">
-<title>Omor TE — Always Building</title><style>
-:root {
-  --bg: #11120f;
-  --panel: #191a16;
-  --text: #f4f3ed;
-  --muted: #a3a49a;
-  --accent: #c8f169;
-  --line: rgba(255,255,255,.12);
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="Omor TE — gaming, technology, and creative projects.">
+<title>Omor TE — Personal Website</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{
+  --bg:#11110f;
+  --surface:#191916;
+  --text:#f1efe9;
+  --muted:#a6a49c;
+  --line:rgba(241,239,233,.15);
+  --accent:#c8f169;
+  --max:1120px;
 }
 
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.7;
-  -webkit-tap-highlight-color: transparent;
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:25px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
-button, a, nav, .badge, .eyebrow {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
+p,h1,h2,h3,footer span,.project-card p{
+  user-select:text;
+  -webkit-user-select:text;
 }
 
-p, h1, h2, h3, .project-description, footer {
-  -webkit-user-select: text;
-  user-select: text;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 5px;
+a:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:5px;
 }
 
-.wrap {
-  width: min(1080px, 88%);
-  margin: auto;
+.wrap{
+  width:min(var(--max),calc(100% - 44px));
+  margin-inline:auto;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(17,18,15,.91);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
+/* HEADER */
+header.topbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border-bottom:1px solid var(--line);
+  background:rgba(17,17,15,.94);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
 }
 
-nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.wordmark{
+  flex-shrink:0;
+  font:800 19px/1 "Manrope",sans-serif;
+  letter-spacing:-.055em;
+  white-space:nowrap;
 }
 
-.logo {
-  font-weight: 900;
-  letter-spacing: -1px;
-  font-size: 20px;
+.wordmark span{
+  color:var(--accent);
 }
 
-.logo span { color: var(--accent); }
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  font-size: 13px;
-  color: var(--muted);
+.nav{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  color:var(--muted);
+  font-size:13px;
 }
 
-.nav-links a:hover { color: var(--accent); }
-
-.hero {
-  min-height: 500px;
-  padding: 75px 0;
-  display: grid;
-  grid-template-columns: 1.5fr .7fr;
-  gap: 45px;
-  align-items: center;
+.nav a{
+  transition:color .2s;
 }
 
-.eyebrow {
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2.3px;
-  text-transform: uppercase;
+.nav a:hover{
+  color:var(--text);
 }
 
-h1 {
-  font-size: clamp(48px, 7vw, 78px);
-  line-height: .99;
-  letter-spacing: -4px;
-  margin: 23px 0;
-  font-weight: 850;
+.availability{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-size:11px;
+  color:var(--muted);
+  white-space:nowrap;
 }
 
-h1 span { color: var(--accent); }
-
-.hero p, .section-intro {
-  max-width: 540px;
-  color: var(--muted);
-  font-size: 16px;
+.dot{
+  width:7px;
+  height:7px;
+  background:var(--accent);
+  border-radius:50%;
+  flex-shrink:0;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
+/* HERO */
+.hero{
+  padding:76px 0 78px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 19px;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  font-size: 13px;
-  font-weight: 750;
-  transition: transform .2s, background .2s;
+.eyebrow{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:10px;
+  font-weight:700;
 }
 
-.btn:hover { transform: translateY(-3px); }
-
-.btn.primary {
-  background: var(--accent);
-  color: #171910;
-  border-color: var(--accent);
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+  gap:clamp(35px,7vw,96px);
+  align-items:center;
 }
 
-/* Smaller portrait with the FULL image visible */
-.portrait-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 255px;
-  margin: auto;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--panel);
+h1{
+  font:600 clamp(48px,7.4vw,92px)/.99 "Manrope",sans-serif;
+  letter-spacing:-.085em;
+  margin:22px 0 25px;
+  max-width:720px;
 }
 
-.portrait {
-  display: block;
-  width: 100%;
-  height: 285px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 5px;
-  background: #11120f;
-  -webkit-user-drag: none;
-  user-select: none;
+h1 em{
+  color:var(--accent);
+  font-style:normal;
 }
 
-.portrait-label {
-  position: absolute;
-  left: -12px;
-  bottom: 22px;
-  background: var(--accent);
-  color: #171910;
-  padding: 9px 12px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 850;
+.intro{
+  max-width:480px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.85;
 }
 
-.section {
-  padding: 80px 0;
-  border-top: 1px solid var(--line);
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
 }
 
-.section-heading {
-  display: grid;
-  grid-template-columns: .7fr 1.3fr;
-  gap: 30px;
-  margin-bottom: 42px;
+.button{
+  min-height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  border:1px solid var(--line);
+  font-size:12px;
+  font-weight:700;
+  transition:transform .2s,background .2s,color .2s;
 }
 
-.section-number {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.button:hover{
+  transform:translateY(-2px);
 }
 
-h2 {
-  font-size: clamp(32px, 5vw, 53px);
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin: 0;
+.button.primary{
+  background:var(--accent);
+  color:#171910;
+  border-color:var(--accent);
 }
 
-.about-text {
-  max-width: 720px;
-  color: var(--muted);
-  font-size: 16px;
+.button.secondary:hover{
+  background:var(--surface);
 }
 
-.about-text strong { color: var(--text); }
-
-.signature {
-  color: var(--accent);
-  font-weight: 750;
+/* PROFILE PHOTO */
+.portrait-wrap{
+  position:relative;
+  width:100%;
+  max-width:255px;
+  justify-self:end;
+  margin:auto;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface);
 }
 
-.interests {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+.portrait-frame{
+  position:relative;
+  overflow:hidden;
+  background:#11110f;
+  border-radius:5px;
 }
 
-.interest {
-  padding: 25px 22px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--panel);
-  transition: transform .2s, border-color .2s;
+.portrait-frame img{
+  display:block;
+  width:100%;
+  height:285px;
+  object-fit:contain;
+  object-position:center;
+  -webkit-user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
-.interest:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
+.portrait-caption{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
 }
 
-.interest .icon { font-size: 25px; }
-
-.interest h3 {
-  margin: 14px 0 7px;
-  font-size: 18px;
+.portrait-caption span:last-child{
+  color:var(--accent);
+  white-space:nowrap;
 }
 
-.interest p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 0;
+/* SECTIONS */
+.section{
+  border-top:1px solid var(--line);
+  padding:66px 0;
+  scroll-margin-top:85px;
 }
 
-.projects {
-  display: grid;
-  gap: 12px;
+.section-head{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:30px;
+  margin-bottom:34px;
 }
 
-.project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 23px 25px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: rgba(255,255,255,.018);
-  transition: background .2s, border-color .2s, transform .2s;
+.section-label{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:10px;
+  padding-top:9px;
 }
 
-.project:hover {
-  background: var(--panel);
-  border-color: rgba(200,241,105,.6);
-  transform: translateX(4px);
+h2{
+  margin:0;
+  font:600 clamp(30px,4vw,47px)/1.12 "Manrope",sans-serif;
+  letter-spacing:-.06em;
 }
 
-.project-meta {
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.about-copy{
+  max-width:720px;
+  margin-left:210px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
 }
 
-.project h3 {
-  margin: 5px 0;
-  font-size: 21px;
-  letter-spacing: -.5px;
+.about-copy strong{
+  color:var(--text);
+  font-weight:600;
 }
 
-.project-description {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 0;
+.about-copy p{
+  margin:0 0 20px;
 }
 
-.arrow {
-  color: var(--accent);
-  font-size: 24px;
-  flex-shrink: 0;
+/* INTERESTS */
+.interests{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
 }
 
-.contact-box {
-  background: var(--accent);
-  color: #171910;
-  padding: clamp(28px, 6vw, 60px);
-  border-radius: 8px;
+.interest{
+  padding:24px 20px 8px 0;
 }
 
-.contact-box .eyebrow { color: #424c2c; }
-
-.contact-box h2 { margin: 15px 0; }
-
-.contact-box p {
-  max-width: 540px;
-  font-size: 14px;
+.interest+.interest{
+  border-left:1px solid var(--line);
+  padding-left:24px;
 }
 
-.email {
-  display: inline-block;
-  margin-top: 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(0,0,0,.35);
-  font-weight: 850;
-  overflow-wrap: anywhere;
+.interest-num{
+  color:var(--accent);
+  font-size:11px;
 }
 
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
+.interest h3{
+  margin:13px 0 7px;
+  font:600 19px "Manrope",sans-serif;
+  letter-spacing:-.04em;
 }
 
-.socials a {
-  padding: 10px 15px;
-  border: 1px solid rgba(0,0,0,.3);
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 800;
-  transition: background .2s;
+.interest p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
 }
 
-.socials a:hover { background: rgba(0,0,0,.08); }
-
-footer {
-  padding: 26px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  color: var(--muted);
-  font-size: 11px;
+/* PROJECTS */
+.project-card{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+  padding:26px 0;
+  border-top:1px solid var(--line);
+  transition:padding .2s;
 }
 
-footer span { color: var(--accent); }
+.project-card:last-child{
+  border-bottom:1px solid var(--line);
+}
 
-@media (max-width: 720px) {
-  .wrap { width: 89%; }
+a.project-card:hover{
+  padding-left:7px;
+}
 
-  nav { min-height: 62px; }
+.project-kicker{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:10px;
+}
 
-  .nav-links {
-    gap: 13px;
-    font-size: 11px;
+.project-card h3{
+  margin:7px 0 5px;
+  font:600 22px "Manrope",sans-serif;
+  letter-spacing:-.05em;
+}
+
+.project-card p{
+  margin:0;
+  max-width:650px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.arrow{
+  flex:0 0 42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  font-size:19px;
+  transition:background .2s,color .2s;
+}
+
+.project-card:hover .arrow{
+  background:var(--accent);
+  color:#171910;
+}
+
+/* SOCIAL LINKS */
+.socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.socials a{
+  border:1px solid var(--line);
+  padding:12px 15px;
+  font-size:12px;
+  color:var(--muted);
+  transition:background .2s,color .2s,border-color .2s;
+}
+
+.socials a:hover{
+  color:var(--text);
+  border-color:var(--accent);
+}
+
+/* CONTACT */
+.contact-band{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.contact-band h2{
+  max-width:650px;
+  margin-top:16px;
+}
+
+.email-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-top:24px;
+  padding:13px 16px;
+  background:var(--accent);
+  color:#171910;
+  font-size:12px;
+  font-weight:700;
+  overflow-wrap:anywhere;
+  transition:transform .2s;
+}
+
+.email-link:hover{
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--line);
+  padding:24px 0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+/* ANIMATIONS */
+.reveal{
+  animation:rise .7s both;
+}
+
+.delay-2{
+  animation-delay:.15s;
+}
+
+@keyframes rise{
+  from{
+    opacity:0;
+    transform:translateY(14px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .wrap{
+    width:min(calc(100% - 32px),var(--max));
   }
 
-  .hero {
-    min-height: auto;
-    padding: 55px 0 60px;
-    grid-template-columns: 1fr;
-    gap: 35px;
+  header.topbar{
+    min-height:64px;
+    gap:10px;
   }
 
-  h1 {
-    font-size: clamp(46px, 12vw, 68px);
-    letter-spacing: -3px;
+  .wordmark{
+    font-size:17px;
+    letter-spacing:-.045em;
   }
 
-  .portrait-wrap {
-    max-width: 205px;
-    padding: 9px;
+  .nav{
+    gap:13px;
+    font-size:11px;
   }
 
-  .portrait { height: 225px; }
-
-  .portrait-label {
-    left: -8px;
-    bottom: 18px;
-    font-size: 9px;
+  .nav a:nth-child(2){
+    display:none;
   }
 
-  .section { padding: 60px 0; }
-
-  .section-heading {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-bottom: 30px;
+  .availability{
+    display:none;
   }
 
-  .interests { grid-template-columns: 1fr; }
+  .hero{
+    padding:49px 0 55px;
+  }
 
-  .interest { padding: 21px; }
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
 
-  .project { padding: 19px 16px; }
+  h1{
+    font-size:clamp(49px,13vw,76px);
+  }
 
-  .project h3 { font-size: 18px; }
+  .intro{
+    font-size:14px;
+  }
 
-  .project-description { font-size: 12px; }
+  .portrait-wrap{
+    justify-self:start;
+    max-width:205px;
+    padding:9px;
+    margin:0;
+  }
 
-  .contact-box { padding: 28px 22px; }
+  .portrait-frame img{
+    height:225px;
+  }
 
-  footer { flex-direction: column; }
+  .section{
+    padding:48px 0;
+    scroll-margin-top:72px;
+  }
+
+  .section-head{
+    grid-template-columns:1fr;
+    gap:13px;
+    margin-bottom:24px;
+  }
+
+  .about-copy{
+    margin-left:0;
+    font-size:14px;
+  }
+
+  .interests{
+    grid-template-columns:1fr;
+  }
+
+  .interest,
+  .interest+.interest{
+    border-left:0;
+    border-bottom:1px solid var(--line);
+    padding:21px 0;
+  }
+
+  .interest:last-child{
+    border-bottom:0;
+  }
+
+  .project-card{
+    gap:14px;
+  }
+
+  .project-card h3{
+    font-size:19px;
+  }
+
+  .project-card p{
+    font-size:12px;
+  }
+
+  .arrow{
+    flex-basis:36px;
+    height:36px;
+  }
+
+  .contact-band{
+    align-items:start;
+    flex-direction:column;
+  }
+
+  .socials{
+    gap:8px;
+  }
+
+  .socials a{
+    padding:11px 12px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:7px;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+@media(max-width:360px){
+  .nav{
+    gap:9px;
+    font-size:10px;
+  }
 
-  *, *::before, *::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
+  .wordmark{
+    font-size:16px;
   }
 }
-</style></head><body><header>
-  <nav class="wrap">
-    <a class="logo" href="#home">OMOR<span>TE.</span></a><div class="nav-links">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *:before,
+  *:after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style></head><body><header class="wrap topbar" id="home">
+  <a class="wordmark" href="#home" aria-label="Omor TE Home">Omor TE<span>.</span></a>  <nav class="nav" aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>  <div class="availability">
+    <span class="dot"></span>
+    PERSONAL WEBSITE
+  </div>
+</header><main><!-- HERO --><section class="wrap hero">
+  <div class="hero-grid"><div class="reveal">
+  <div class="eyebrow">A little about me</div>
+
+  <h1>
+    Curious by nature.<br>
+    <em>Always creating.</em>
+  </h1>
+
+  <p class="intro">
+    Hey, I’m Omor — a gaming enthusiast and technology lover who enjoys exploring ideas, learning new things, and building projects along the way.
+  </p>
+
+  <div class="hero-actions">
+    <a class="button primary" href="#about">
+      Get to know me <span aria-hidden="true">&nbsp;↘</span>
+    </a>
+
+    <a class="button secondary" href="#projects">
+      Explore my work
+    </a>
+  </div>
 </div>
 
-  </nav>
-</header><main><section class="hero wrap" id="home">
-  <div>
-    <div class="eyebrow">A little about me · Welcome</div><h1>
-  Curious by<br>
-  nature.<br>
-  <span>Always building.</span>
-</h1>
-
-<p>Hey, I’m Omor TE — a gaming enthusiast, technology lover, and creator who enjoys turning ideas into real things.</p>
-
-<div class="actions">
-  <a class="btn primary" href="#projects">Explore my projects ↗</a>
-  <a class="btn" href="#contact">Get in touch</a>
-</div>
-
-  </div>  <div class="portrait-wrap">
+<div class="portrait-wrap reveal delay-2">
+  <div class="portrait-frame">
     <img
-      class="portrait"
       src="https://i.postimg.cc/B6zZscsp/1787207050581.jpg"
-      alt="Omor TE profile photo"
-    >
-    <div class="portrait-label">LEARN. CREATE. REPEAT. ↗</div>
+      alt="Portrait of Omor TE"
+      fetchpriority="high"
+      draggable="false">
   </div>
-</section><section class="section" id="about">
-  <div class="wrap">
-    <div class="section-heading">
-      <div class="section-number">01 — ABOUT ME</div>
-      <h2>Not just ideas.<br>Things I can build.</h2>
-    </div><div class="about-text">
-  <p>Hey! I’m Omor TE. I love <strong>building new things</strong>, exploring technology, and turning random ideas into real projects. Whether it’s a website, a useful tool, or something connected to gaming, I enjoy learning how things work and finding ways to make them better.</p>
 
-  <p>Gaming is one of my favourite ways to unwind, while creating projects gives me a chance to experiment, solve problems, and learn something new. I’m not here to pretend I know everything — I’m here to keep improving, try ideas that excite me, and build things people can actually use.</p>
-
-  <p>This website is my little corner of the internet: a place to share what I make, what I’m interested in, and what I’m working toward.</p>
-
-  <p class="signature">Always learning. Always building. Always curious.</p>
+  <div class="portrait-caption">
+    <span>OMOR TE · PERSONAL SPACE</span>
+    <span>01 / ABOUT</span>
+  </div>
 </div>
 
   </div>
-</section><section class="section" id="interests">
-  <div class="wrap">
-    <div class="section-heading">
-      <div class="section-number">02 — WHAT I LIKE</div>
-      <h2>Things that<br>keep me curious.</h2>
-    </div><div class="interests">
+</section><!-- ABOUT --><section class="section" id="about">
+  <div class="wrap"><div class="section-head">
+  <div class="section-label">01 — The person</div>
+
+  <h2>
+    Not just what I do.<br>
+    What I’m curious about.
+  </h2>
+</div>
+
+<div class="about-copy">
+  <p>
+    I’m someone who enjoys the mix of
+    <strong>gaming, technology, and creativity</strong>.
+    I like figuring out how things work, trying out new tools,
+    and turning ideas into something real. This site is my little
+    corner of the internet — a place to share what I’m working on
+    and what I’m learning.
+  </p>
+
+  <p>
+    I’m still learning, still experimenting, and always looking
+    for the next interesting thing to explore. There’s no big
+    story to sell here — just genuine interests, ongoing projects,
+    and room to grow.
+  </p>
+
+  <p>
+    Outside of gaming, I enjoy exploring websites, experimenting
+    with digital tools, and finding simple ways to bring my ideas
+    to life. I believe every project is a chance to learn something
+    new and improve a little more.
+  </p>
+</div>
+
+  </div>
+</section><!-- INTERESTS --><section class="section" id="interests">
+  <div class="wrap"><div class="section-head">
+  <div class="section-label">02 — What I’m into</div>
+
+  <h2>
+    A few things that<br>
+    keep me interested.
+  </h2>
+</div>
+
+<div class="interests">
+
   <article class="interest">
-    <div class="icon">🎮</div>
+    <div class="interest-num">01 / PLAY</div>
     <h3>Gaming</h3>
-    <p>I enjoy discovering games, learning strategies, and exploring the details that make games memorable — especially Modern Warships.</p>
+    <p>
+      Exploring games, learning strategies, and enjoying the
+      little details that make a game memorable.
+    </p>
   </article>
 
   <article class="interest">
-    <div class="icon">⌘</div>
+    <div class="interest-num">02 / EXPLORE</div>
     <h3>Technology</h3>
-    <p>Websites, apps, AI tools, and the clever technology that turns an idea into something useful all interest me.</p>
+    <p>
+      Curious about websites, apps, useful tools, and the tech
+      that makes everyday things possible.
+    </p>
   </article>
 
   <article class="interest">
-    <div class="icon">✳</div>
-    <h3>Creating Things</h3>
-    <p>I learn by making things myself, testing ideas, fixing problems, and improving each project step by step.</p>
+    <div class="interest-num">03 / MAKE</div>
+    <h3>Creative Projects</h3>
+    <p>
+      Turning ideas into small projects, learning by doing,
+      and improving things one step at a time.
+    </p>
   </article>
-</div>
-
-  </div>
-</section><section class="section" id="projects">
-  <div class="wrap">
-    <div class="section-heading">
-      <div class="section-number">03 — THINGS I’VE MADE</div>
-      <h2>Ideas turned<br>into real projects.</h2>
-    </div><div class="projects">
-
-  <a class="project" href="https://mw-legends-chatbot.lovable.app/" target="_blank" rel="noopener noreferrer">
-    <div>
-      <div class="project-meta">01 · Gaming · Chatbot</div>
-      <h3>MW Legends Official</h3>
-      <p class="project-description">A gaming-focused chatbot project designed to make game information and help easier to access.</p>
-    </div>
-    <span class="arrow">↗</span>
-  </a>
-
-  <a class="project" href="https://trustsend.lovable.app/" target="_blank" rel="noopener noreferrer">
-    <div>
-      <div class="project-meta">02 · Web App · File Sharing</div>
-      <h3>TrustSend</h3>
-      <p class="project-description">A file-hosting and sharing project focused on making it easier to share files through links.</p>
-    </div>
-    <span class="arrow">↗</span>
-  </a>
-
-  <a class="project" href="https://pixel-train.lovable.app/" target="_blank" rel="noopener noreferrer">
-    <div>
-      <div class="project-meta">03 · Web Project</div>
-      <h3>Pixel Train</h3>
-      <p class="project-description">A creative web project built while exploring new ideas and bringing them to life.</p>
-    </div>
-    <span class="arrow">↗</span>
-  </a>
-
-  <a class="project" href="https://pixel-village.lovable.app/" target="_blank" rel="noopener noreferrer">
-    <div>
-      <div class="project-meta">04 · Web Project</div>
-      <h3>Pixel Village</h3>
-      <p class="project-description">An experiment in building, designing, and shaping an idea into an interactive website.</p>
-    </div>
-    <span class="arrow">↗</span>
-  </a>
-
-  <a class="project" href="https://baper-rasta.lovable.app/" target="_blank" rel="noopener noreferrer">
-    <div>
-      <div class="project-meta">05 · Web Project</div>
-      <h3>Baper Rasta</h3>
-      <p class="project-description">A web project that reflects my interest in making and experimenting with digital experiences.</p>
-    </div>
-    <span class="arrow">↗</span>
-  </a>
 
 </div>
 
   </div>
-</section><section class="section" id="contact">
-  <div class="wrap">
-    <div class="contact-box">
-      <div class="eyebrow">04 — FIND ME ONLINE</div>  <h2>Have an idea?<br>Let’s talk.</h2>
+</section><!-- PROJECTS --><section class="section" id="projects">
+  <div class="wrap"><div class="section-head">
+  <div class="section-label">03 — Things I’ve made</div>
 
-  <p>For business enquiries, collaborations, or project-related conversations, feel free to reach out by email. I’m always happy to hear about interesting ideas.</p>
+  <h2>
+    Work in progress.<br>
+    Ideas worth exploring.
+  </h2>
+</div>
 
-  <a class="email" href="mailto:mwlegendsofficial67@gmail.com">mwlegendsofficial67@gmail.com ↗</a>
+<a
+  class="project-card"
+  href="https://mw-legends-chatbot.lovable.app/"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  <div>
+    <div class="project-kicker">Website · Chatbot</div>
+    <h3>MW Legends Official</h3>
+    <p>
+      A gaming-focused chatbot project built to make game
+      information and help easier to access.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+<a
+  class="project-card"
+  href="https://trustsend.lovable.app/"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  <div>
+    <div class="project-kicker">Website · File Sharing</div>
+    <h3>TrustSend</h3>
+    <p>
+      A file-sharing website project designed to make sharing
+      and accessing files easier.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+<a
+  class="project-card"
+  href="https://pixel-train.lovable.app"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  <div>
+    <div class="project-kicker">Web Project</div>
+    <h3>Pixel Train</h3>
+    <p>
+      One of my web projects, built while exploring ideas
+      and experimenting with website creation.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+<a
+  class="project-card"
+  href="https://pixel-village.lovable.app"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  <div>
+    <div class="project-kicker">Web Project</div>
+    <h3>Pixel Village</h3>
+    <p>
+      A creative web project that reflects my interest
+      in building and exploring digital experiences.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+<a
+  class="project-card"
+  href="https://baper-rasta.lovable.app"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  <div>
+    <div class="project-kicker">Web Project</div>
+    <h3>Baper Rasta</h3>
+    <p>
+      Another project from my collection of website experiments.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+<div class="project-card">
+  <div>
+    <div class="project-kicker">Personal · Portfolio</div>
+    <h3>This website</h3>
+    <p>
+      My personal home on the web, bringing together my interests,
+      projects, and social links in one place.
+    </p>
+  </div>
+
+  <span class="arrow" aria-hidden="true">✦</span>
+</div>
+
+  </div>
+</section><!-- CONTACT --><section class="section" id="contact">
+  <div class="wrap"><div class="contact-band">
+  <div>
+    <div class="eyebrow">04 — Find me online</div>
+
+    <h2>Good things start with a hello.</h2>
+
+    <a
+      class="email-link"
+      href="mailto:mwlegendsofficial67@gmail.com">
+      Business Email ↗
+    </a>
+  </div>
 
   <div class="socials">
-    <a href="https://www.youtube.com/@TXRS_Zone" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
-    <a href="https://www.facebook.com/Omor.TE.16016" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-    <a href="https://discord.gg/PQN4P6qSrM" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+
+    <a
+      href="https://www.youtube.com/@TXRS_Zone"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube profile">
+      YouTube ↗
+    </a>
+
+    <a
+      href="https://www.facebook.com/Omor.TE.16016"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook profile">
+      Facebook ↗
+    </a>
+
+    <a
+      href="https://discord.gg/PQN4P6qSrM"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Discord server">
+      Discord ↗
+    </a>
+
   </div>
 </div>
 
   </div>
-</section></main><footer class="wrap">
-  <div>© <span id="year"></span> Omor TE. Made with curiosity.</div>
-  <div>Designed to keep building <span>✳</span></div>
+</section></main><!-- FOOTER --><footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Omor TE</span>
+    <span>Made with care, one detail at a time.</span>
+  </div>
 </footer><script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script></body>
 </html>
