@@ -12,6 +12,11 @@
   --muted: #a3a49a;
   --accent: #c8f169;
   --line: rgba(255,255,255,.12);
+  --cat-gaming: #c8f169;
+  --cat-web: #7cc4ff;
+  --cat-pixel: #ffb86b;
+  --cat-game: #ff8fb1;
+  --cat-bot: #b79bff;
 }
 
 * { box-sizing: border-box; }
@@ -281,12 +286,33 @@ h2 {
   transform: translateX(4px);
 }
 
+/* Colored project categories */
 .project-meta {
-  color: var(--accent);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+.project-meta .cat {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-right: 4px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.cat.bot    { color: #171910; background: var(--cat-bot); }
+.cat.web    { color: #0d1420; background: var(--cat-web); }
+.cat.pixel  { color: #241505; background: var(--cat-pixel); }
+.cat.game   { color: #2a0a16; background: var(--cat-game); }
+.cat.gaming { color: #171910; background: var(--cat-gaming); }
+
+.cat-sep {
+  color: var(--muted);
+  opacity: .5;
+  margin: 0 4px;
 }
 
 .project h3 {
@@ -510,7 +536,9 @@ footer span { color: var(--accent); }
 
   <a class="project" href="https://mw-legends-chatbot.lovable.app/" target="_blank" rel="noopener noreferrer">
     <div>
-      <div class="project-meta">01 · Gaming · Chatbot</div>
+      <div class="project-meta">
+        <span class="cat bot">CHATBOT</span><span class="cat-sep">·</span>01
+      </div>
       <h3>MW Legends Official</h3>
       <p class="project-description">A gaming-focused chatbot project designed to make game information and help easier to access.</p>
     </div>
@@ -519,7 +547,9 @@ footer span { color: var(--accent); }
 
   <a class="project" href="https://trustsend.lovable.app/" target="_blank" rel="noopener noreferrer">
     <div>
-      <div class="project-meta">02 · Web App · File Sharing</div>
+      <div class="project-meta">
+        <span class="cat web">WEB APP</span><span class="cat-sep">·</span>02
+      </div>
       <h3>TrustSend</h3>
       <p class="project-description">A file-hosting and sharing project focused on making it easier to share files through links.</p>
     </div>
@@ -528,7 +558,9 @@ footer span { color: var(--accent); }
 
   <a class="project" href="https://pixel-train.lovable.app/" target="_blank" rel="noopener noreferrer">
     <div>
-      <div class="project-meta">03 · Nostalgic · Pixel Art</div>
+      <div class="project-meta">
+        <span class="cat pixel">PIXEL ART</span><span class="cat-sep">·</span>03
+      </div>
       <h3>Pixel Train</h3>
       <p class="project-description">A pixel-style train experience with a nostalgic vibe, bringing back the charm of simple, retro-inspired visuals.</p>
     </div>
@@ -537,7 +569,9 @@ footer span { color: var(--accent); }
 
   <a class="project" href="https://pixel-village.lovable.app/" target="_blank" rel="noopener noreferrer">
     <div>
-      <div class="project-meta">04 · Pixel Art · Village</div>
+      <div class="project-meta">
+        <span class="cat pixel">PIXEL ART</span><span class="cat-sep">·</span>04
+      </div>
       <h3>Pixel Village</h3>
       <p class="project-description">A pixel-art village viewing experience where you can explore charming pixel-style scenery and enjoy the view.</p>
     </div>
@@ -546,9 +580,33 @@ footer span { color: var(--accent); }
 
   <a class="project" href="https://baper-rasta.lovable.app/" target="_blank" rel="noopener noreferrer">
     <div>
-      <div class="project-meta">05 · Game · Dhaka Mayhem</div>
+      <div class="project-meta">
+        <span class="cat game">GAME</span><span class="cat-sep">·</span>05
+      </div>
       <h3>Baper Rasta</h3>
       <p class="project-description">Take a rickshaw through the streets of Dhaka and cause mayhem in this chaotic, city-inspired experience.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://baper-doa.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">
+        <span class="cat game">GAME</span><span class="cat-sep">·</span>06
+      </div>
+      <h3>Baper Doa</h3>
+      <p class="project-description">The second chapter of Baper Rasta — now with a second-person view. Ride a rickshaw, cause chaos, and bring the streets of Dhaka to life from an entirely new perspective.</p>
+    </div>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="project" href="https://thappor-man.lovable.app/" target="_blank" rel="noopener noreferrer">
+    <div>
+      <div class="project-meta">
+        <span class="cat game">GAME</span><span class="cat-sep">·</span>07
+      </div>
+      <h3>Thappor Man</h3>
+      <p class="project-description">Criminals are on the run. Chase them down, catch them, and deliver a proper slap in this fast-paced, action-packed game.</p>
     </div>
     <span class="arrow">↗</span>
   </a>
